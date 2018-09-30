@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传处理合并页面</title>
+
+</head>
+<body>
+<!--- <form action="{% url 'index:upload' %}" method="post" enctype="multipart/form-data"></form>
+<br>
+单个文件上传<input type="file" name="xls" onchange="change()" id="xls" >
+<input type="submit" value="上传" onclick="upload()">
+<br>
+--->
+
+
+文件上传<input type="file" name="xls" onchange="change()" id="nxls" multiple="" >
+<input id="s" type="submit" value="上传" onclick="uploads()" >
+<br>
+<a id="a" style="display: none">正在上传</a>
+<h3>表头顺序</h3>
+
+   <h4> 注:</h4>
+<h5>
+    以英文字符"\"间隔，<span style="color: red">没有标注的，将不做合并</span><br>
+    用表头顺序第一个为根据，将表内数据去重<br>
+    一定要将表头填写正确，否则，该列数据将会忽略
+</h5>
+<div  style="text-align: center;width: auto;height:auto">
+    <h3>合并后的表头</h3>
+    <div class="header">
+
+    </div>
+
+</div>
+<input type="text" name="name" id="name">
+
+
+<input type="reset" value="表头排序并导出" id="out" onclick="download()">
+<div class="down"></div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="{% static 'js/merge.js' %}">
+</script>
+</html>
